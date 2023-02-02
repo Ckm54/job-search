@@ -8,6 +8,7 @@ interface IProps {
 
 export const JobsContext = React.createContext<JobDataContext | null>(null);
 
+// fetches all posts from api and provides to application
 const JobsProvider = ({children} : IProps) => {
   const [jobData, setJobData] = React.useState<JobData[]>([]);
 
