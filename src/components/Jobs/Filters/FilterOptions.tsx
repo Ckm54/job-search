@@ -27,8 +27,9 @@ const FilterOptions = (props: Props) => {
     <Stack mx={2} mt={2}>
         <Typography>{title}:</Typography>
         <Stack width='100%' overflow={{xs: 'scroll', md: 'visible'}} alignItems={"flex-start"} ml={2}>
-          {data.map((item: Specialty) => (
+          {data.map((item: Specialty, index: number) => (
             <FilterBtn
+              key={index}
               sx={{
                 backgroundColor: `${
                   item.isActive ? palleteColor.secondary : "transparent"

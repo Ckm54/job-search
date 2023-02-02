@@ -26,11 +26,12 @@ const Filters = (props: Props) => {
 
   return (
     <Box
-      mr={{ lg: 5 }}
+      mr={{ lg: 5, sm: 4 }}
       sx={{
         border: `1px solid ${palleteColor.grayPallete}`,
         borderRadius: "5px",
         padding: "10px 20px",
+        height: 'max-content'
       }}
     >
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
