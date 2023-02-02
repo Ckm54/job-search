@@ -3,6 +3,7 @@ import React from "react";
 import { palleteColor } from "../../../themes/palleteColor";
 import { JobData } from "../../../types";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import JobDrawer from "./JobDrawer";
 
 type Props = {
   job: JobData;
@@ -32,6 +33,7 @@ const JobCard = ({ job }: Props) => {
           </Box>
   
           <MoreInfoBtn>View details</MoreInfoBtn>
+          <JobDrawer />
         </Stack>
       </Stack>
     </Container>

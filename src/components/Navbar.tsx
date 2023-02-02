@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Container, useTheme } from "@mui/material";
 import { palleteColor } from "../themes/palleteColor";
+import Logo from '../assets/logo_w_force.png';
 
 interface Props {
   /**
@@ -38,9 +39,7 @@ export default function DrawerAppBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <img src={Logo} />
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -80,13 +79,12 @@ export default function DrawerAppBar(props: Props) {
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              variant="h6"
+            <Box
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              MUI
-            </Typography>
+              <img src={Logo} alt="logo" height={50} width='auto' />
+            </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
                 <Button key={item}>{item}</Button>
