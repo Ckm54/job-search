@@ -5,3 +5,12 @@ export interface JobData {
   description:  string;
   requirements: string[];
 }
+
+export interface ColorData {
+  primary: string;
+  secondary: string;
+  grayPallete: string;
+  darkBlack: string;
+  whiteLight: string;
+  mainBgColor: string;
+}

@@ -23,9 +23,9 @@ function App() {
     //     <div>No data</div>
     //   )}
     // </div>
-    <>
+    <div className="App">
       <LandingPage />
-    </>
+    </div>
   );
 }
 
