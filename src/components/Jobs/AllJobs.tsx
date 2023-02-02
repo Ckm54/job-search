@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, CircularProgress, Container } from "@mui/material";
 import React from "react";
 import { JobsContext } from "../../context/jobsContext";
 import { JobData, JobDataContext } from "../../types";
@@ -10,12 +10,20 @@ type Props = {};
 const AllJobs = (props: Props) => {
   const { jobData } = React.useContext(JobsContext) as JobDataContext;
 
-  console.log("This is the data: ", jobData);
+  if (jobData.length === 0) {
+    return (
+      <Container sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <CircularProgress />
+      </Container>
+    );
+  }
+
   return (
     <Box flexGrow={1}>
       <SearchBar />
-
-      {jobData.length > 0 && jobData.map((job: JobData) => <JobCard key={job.id} job={job} />)}
+      {jobData.map((job: JobData) => (
+        <JobCard key={job.id} job={job} />
+      ))}
     </Box>
   );
 };
