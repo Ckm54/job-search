@@ -13,7 +13,7 @@ const FilterOptions = (props: Props) => {
 
   const FilterBtn = styled(Button)({
     border: `1px solid ${palleteColor.secondary}`,
-    margin: "10px 0 5px 0",
+    display: 'flex',
     borderRadius: "50px",
     padding: "5px 15px",
     width: "100%",
@@ -24,15 +24,16 @@ const FilterOptions = (props: Props) => {
   });
 
   return (
-    <Stack ml={2} mt={2}>
+    <Stack mx={2} mt={2}>
         <Typography>{title}:</Typography>
-        <Stack alignItems={"flex-start"} ml={2}>
+        <Stack width='100%' overflow={{xs: 'scroll', md: 'visible'}} alignItems={"flex-start"} ml={2}>
           {data.map((item: Specialty) => (
             <FilterBtn
               sx={{
                 backgroundColor: `${
                   item.isActive ? palleteColor.secondary : "transparent"
                 }`,
+                margin: {sm: "10px 10px 5px 0", xs: "10px 0 5px 0"},
                 color: `${
                   item.isActive
                     ? palleteColor.whiteLight

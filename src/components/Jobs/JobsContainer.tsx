@@ -10,7 +10,7 @@ const JobsContainer = (props: Props) => {
   return (
     <Box sx={{ borderTop: `1px solid ${palleteColor.secondary}` }}>
       <Container sx={{ padding: "20px 20px 60px 30px" }}>
-        <Box display={"flex"}>
+        <Box display={{md: "flex"}}>
           <Filters />
           <AllJobs />
         </Box>
