@@ -14,3 +14,8 @@ export interface ColorData {
   whiteLight: string;
   mainBgColor: string;
 }
+
+export interface Specialty {
+  name: string;
+  isActive: boolean;
+};
