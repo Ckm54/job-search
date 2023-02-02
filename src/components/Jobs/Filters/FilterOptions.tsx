@@ -1,5 +1,4 @@
 import { Button, Stack, styled, Typography } from '@mui/material';
-import React from 'react'
 import { palleteColor } from '../../../themes/palleteColor';
 import { Specialty } from '../../../types';
 
@@ -14,7 +13,7 @@ const FilterOptions = (props: Props) => {
 
   const FilterBtn = styled(Button)({
     border: `1px solid ${palleteColor.secondary}`,
-    marginBottom: "10px",
+    margin: "10px 0 5px 0",
     borderRadius: "50px",
     padding: "5px 15px",
     width: "100%",
