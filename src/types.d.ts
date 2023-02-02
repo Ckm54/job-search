@@ -6,6 +6,10 @@ export interface JobData {
   requirements: string[];
 }
 
+export interface JobDataContext {
+  jobData: JobData[]
+}
+
 export interface ColorData {
   primary: string;
   secondary: string;
