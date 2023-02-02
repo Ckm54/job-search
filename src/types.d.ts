@@ -8,6 +8,7 @@ export interface JobData {
 
 export interface JobDataContext {
   jobData: JobData[]
+  searchHandler: (query: string) => void
 }
 
 export interface ColorData {
