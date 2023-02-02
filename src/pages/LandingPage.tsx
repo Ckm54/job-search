@@ -1,13 +1,14 @@
 import { Container } from '@mui/system';
 import React from 'react';
-import { Hero, Navbar } from '../components';
+import { Hero, JobsContainer, Navbar } from '../components';
 
 const LandingPage = () => {
   return (
-    <Container>
+    <>
       <Navbar />
       <Hero />
-    </Container>
+      <JobsContainer />
+    </>
   )
 }
 
