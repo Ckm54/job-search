@@ -78,7 +78,7 @@ const JobDetails = () => {
               </Box>
             </Stack>
             
-            <ApplyButton onClick={() => handleApply()} loading={loading} loadingIndicator='Sending...' >Apply</ApplyButton>
+            <ApplyButton onClick={() => handleApply()} loading={loading} loadingIndicator='Applying...' >Apply</ApplyButton>
           </Stack>
         </Container>
       )}
