@@ -5,9 +5,7 @@ import { JobData, JobDataContext } from "../../types";
 import JobCard from "./JobCard/JobCard";
 import SearchBar from "./SearchBar/SearchBar";
 
-type Props = {};
-
-const AllJobs = (props: Props) => {
+const AllJobs = () => {
   const { jobsData } = React.useContext(JobsContext) as JobDataContext;
 
   if (jobsData.length === 0) {
