@@ -3,6 +3,9 @@
 
 Welcome to the Job-listing Website! This website allows users to view job listings around and near them. A user can also search for a specific job and view details before applying on the click of a button
 
+Live site:
+ - [Job-listingapp](https://job-searchapp.netlify.app/)
+
 
 ## Features
 
