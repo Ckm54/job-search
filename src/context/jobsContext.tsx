@@ -15,6 +15,7 @@ const JobsProvider = ({ children }: IProps) => {
   const [JobDetails, setJobDetails] = React.useState<JobData[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
+  // handles searchning for a given job by title or keywords
   const searchHandler = (query: string) => {
     if (query === "") {
       getJobsData();
@@ -27,14 +28,17 @@ const JobsProvider = ({ children }: IProps) => {
     setJobsData(data);
   };
 
+  // notifies the user of a successful application made
   const notify = () => toast.success('Application submitted.');
 
+  // gets details of a specific job and filters list by id to return the matching job
   const viewDetailsHandler = (jobId: number) => {
     const jobs = jobsData.filter((job: JobData) => job.id === jobId);
     setJobDetails(jobs);
     setIsDrawerOpen(true);
   };
 
+  // gets all jobs from json file to display on the application
   const getJobsData = async () => {
     const data = getData();
     setJobsData(await data);
