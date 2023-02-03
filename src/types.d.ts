@@ -7,8 +7,10 @@ export interface JobData {
 }
 
 export interface JobDataContext {
+  jobsData: JobData[];
+  searchHandler: (query: string) => void;
+  viewDetailsHandler: (id: number) => void;
   jobData: JobData[]
-  searchHandler: (query: string) => void
 }
 
 export interface ColorData {

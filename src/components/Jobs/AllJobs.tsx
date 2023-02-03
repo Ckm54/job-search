@@ -8,9 +8,9 @@ import SearchBar from "./SearchBar/SearchBar";
 type Props = {};
 
 const AllJobs = (props: Props) => {
-  const { jobData } = React.useContext(JobsContext) as JobDataContext;
+  const { jobsData } = React.useContext(JobsContext) as JobDataContext;
 
-  if (jobData.length === 0) {
+  if (jobsData.length === 0) {
     return (
       <Container sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <CircularProgress />
@@ -21,7 +21,7 @@ const AllJobs = (props: Props) => {
   return (
     <Box flexGrow={1}>
       <SearchBar />
-      {jobData.map((job: JobData) => (
+      {jobsData.map((job: JobData) => (
         <JobCard key={job.id} job={job} />
       ))}
     </Box>

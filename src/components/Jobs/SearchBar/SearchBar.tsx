@@ -20,11 +20,9 @@ const SearchBar = (props: Props) => {
     clearTimeout(searchTimeout);
     setSearchQuery(e.currentTarget.value);
 
-    setSearchTimeout(
-      setTimeout(() => {
-        searchHandler(searchQuery);
-      }, 500)
-    );
+    if(e.currentTarget.value === '') {
+      searchHandler('');
+    }
   };
 
   const SearchBtn = styled(Button)({

@@ -9,33 +9,47 @@ interface IProps {
 export const JobsContext = React.createContext<JobDataContext | null>(null);
 
 // fetches all posts from api and provides to application
-const JobsProvider = ({children} : IProps) => {
-  const [jobData, setJobData] = React.useState<JobData[]>([]);
-  const [query, setQuery] = React.useState<string>("");
+const JobsProvider = ({ children }: IProps) => {
+  const [jobsData, setJobsData] = React.useState<JobData[]>([]);
+  const [JobDetails, setJobDetails] = React.useState<JobData[]>([]);
 
   const searchHandler = (query: string) => {
-    setQuery(query);
-
-    if(query === '') {
+    if (query === "") {
       getJobsData();
     }
 
-    const data = jobData.filter((job: JobData) => job.title.toLowerCase().includes(query.toLowerCase()));
+    const data = jobsData.filter((job: JobData) =>
+      job.title.toLowerCase().includes(query.toLowerCase())
+    );
 
-    setJobData(data);
-  }
+    setJobsData(data);
+  };
+
+  const viewDetailsHandler = (jobId: number) => {
+    const jobs = jobsData.filter((job: JobData) => job.id === jobId);
+    setJobDetails(jobs);
+  };
 
   const getJobsData = async () => {
     const data = getData();
-    setJobData(await data);
+    setJobsData(await data);
   };
   React.useEffect(() => {
-
     getJobsData();
   }, []);
 
-
-  return <JobsContext.Provider value={{jobData: jobData, searchHandler: searchHandler}}>{children}</JobsContext.Provider>
-}
+  return (
+    <JobsContext.Provider
+      value={{
+        jobsData: jobsData,
+        searchHandler: searchHandler,
+        viewDetailsHandler: viewDetailsHandler,
+        jobData: JobDetails,
+      }}
+    >
+      {children}
+    </JobsContext.Provider>
+  );
+};
 
 export default JobsProvider;
