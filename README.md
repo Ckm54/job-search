@@ -6,6 +6,9 @@ Welcome to the Job-listing Website! This website allows users to view job listin
 Live site:
  - [Job-listingapp](https://job-searchapp.netlify.app/)
 
+ Design files - Figma
+ - [Link to figma design](https://www.figma.com/file/BShCxayw6YaEk1vycHAPAa/Untitled?node-id=0%3A1&t=r0aUhdtSa570JlJ7-1)
+
 
 ## Features
 
