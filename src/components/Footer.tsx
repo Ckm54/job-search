@@ -16,6 +16,7 @@ const Footer = (props: Props) => {
         >
           <img src={Logo} alt="logo" height={40} width="auto" />
           <Typography sx={{fontSize: {xs: '12px'}}}>&copy; {new Date().getFullYear()} | All rights reserved </Typography>
+          <Typography sx={{fontSize: '12px'}}> | Collins K</Typography>
         </Box>
       </Container>
     </Box>
