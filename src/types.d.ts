@@ -10,7 +10,9 @@ export interface JobDataContext {
   jobsData: JobData[];
   searchHandler: (query: string) => void;
   viewDetailsHandler: (id: number) => void;
-  jobData: JobData[]
+  jobData: JobData[];
+  isDrawerOpen: boolean;
+  setDrawerOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface ColorData {
