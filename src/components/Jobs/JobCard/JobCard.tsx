@@ -26,7 +26,6 @@ const JobCard = ({ job }: Props) => {
     backgroundColor: `${palleteColor.primary}`,
     color: `${palleteColor.whiteLight}`,
     borderRadius: "0px",
-    padding: "8px 24px",
     "&:hover": {
       backgroundColor: "#E64839",
     },
@@ -49,15 +48,16 @@ const JobCard = ({ job }: Props) => {
         }}
       >
         <Stack>
-          <Typography fontWeight={600} fontSize={"24px"}>
+          <Typography fontWeight={600} fontSize={{md: "24px"}}>
             {job.title}
           </Typography>
-          <Typography my={2}>{job.description}</Typography>
+          <Typography fontSize={{xs: '14px', sm: '17px'}} my={2}>{job.description}</Typography>
           <Stack direction="row" justifyContent={"space-between"}>
             <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
+                fontSize: {xs: '12px', sm: '16px'},
                 gap: 0.5,
                 color: `${palleteColor.grayPallete}`,
               }}
@@ -66,7 +66,7 @@ const JobCard = ({ job }: Props) => {
               {job.location}
             </Box>
 
-            <MoreInfoBtn onClick={() => handleDrawerOpen(job.id)}>
+            <MoreInfoBtn sx={{padding: {md: "8px 24px", xs: '8px 16px'}, fontSize: {xs: '12px', sm: '16px'}}} onClick={() => handleDrawerOpen(job.id)}>
               View details
             </MoreInfoBtn>
           </Stack>

@@ -20,7 +20,7 @@ const JobDrawer = () => {
         <React.Fragment>
           <SwipeableDrawer
             PaperProps={{
-              sx: { width: "30%" },
+              sx: { width: {md: "30%" }},
             }}
             anchor='right'
             BackdropProps={{ invisible: true }}

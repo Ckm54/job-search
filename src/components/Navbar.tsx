@@ -13,7 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Container, useTheme } from "@mui/material";
+import { Container, styled, useTheme } from "@mui/material";
 import { palleteColor } from "../themes/palleteColor";
 import Logo from '../assets/logo_w_force.png';
 
@@ -31,11 +31,20 @@ const navItems = ["Home", "Jobs"];
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const theme = useTheme();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const SearchBtn = styled(Button)({
+    backgroundColor: `${palleteColor.primary}`,
+    color: `${palleteColor.whiteLight}`,
+    borderRadius: "5px",
+    padding: "12px 25px",
+    "&:hover": {
+      backgroundColor: "#E64839",
+    },
+  });
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>

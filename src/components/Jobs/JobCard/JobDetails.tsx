@@ -6,6 +6,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { palleteColor } from "../../../themes/palleteColor";
 import VerifiedIcon from '@mui/icons-material/Verified';
 import { LoadingButton } from "@mui/lab";
+import CloseIcon from "@mui/icons-material/Close";
 
 const JobDetails = () => {
   const { jobData, isDrawerOpen, setDrawerOpen } = React.useContext(
@@ -39,11 +40,14 @@ const JobDetails = () => {
         <Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
           <Stack gap={6}>
             <Stack gap={1}>
-              <Box display={'flex'} sx={{alignItems: 'center', gap: 2}}>
-                <Typography fontWeight={600} fontSize={"24px"}>
-                  {jobData[0].title}
-                </Typography>
-                <VerifiedIcon sx={{color: 'blue'}} />
+              <Box display={'flex'} sx={{alignItems: 'center',justifyContent: 'space-between'}}>
+                <Box display={'flex'} sx={{alignItems: 'center', gap: 2}}>
+                  <Typography fontWeight={600} fontSize={"24px"}>
+                    {jobData[0].title}
+                  </Typography>
+                  <VerifiedIcon sx={{color: 'blue'}} />
+                </Box>
+                <CloseIcon onClick={() => setDrawerOpen(false)} sx={{cursor: 'pointer', display: {xs: 'unset', md: 'none'}}} />
               </Box>
               <Typography>{jobData[0].description}</Typography>
             </Stack>
