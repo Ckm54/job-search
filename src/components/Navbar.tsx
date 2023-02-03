@@ -44,6 +44,7 @@ export default function DrawerAppBar(props: Props) {
     padding: "5px 25px",
     "&:hover": {
       backgroundColor: "#E64839",
+      color: `${palleteColor.whiteLight}`
     },
   });
 
