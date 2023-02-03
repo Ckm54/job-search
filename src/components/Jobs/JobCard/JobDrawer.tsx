@@ -1,38 +1,32 @@
 import * as React from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Button from '@mui/material/Button';
 import JobDetails from './JobDetails';
+import { JobsContext } from '../../../context/jobsContext';
+import { JobDataContext } from '../../../types';
+
+interface IProps {
+  isOpen: boolean;
+  // setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 export type Anchor = 'right';
 
-export default function JobDrawer() {
+const JobDrawer = () => {
 
-  const [isOpen, setIsOpen] = React.useState(false)
-
-  const toggleDrawer =
-    (open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return;
-      }
-
-      setIsOpen(open);
-    };
+  const { isDrawerOpen, setDrawerOpen } = React.useContext(JobsContext) as JobDataContext;
 
   return (
     <div>
         <React.Fragment>
-          <Button onClick={toggleDrawer(true)}>open drawer</Button>
           <SwipeableDrawer
+            PaperProps={{
+              sx: { width: "30%" },
+            }}
             anchor='right'
-            open={isOpen}
-            onClose={toggleDrawer(false)}
-            onOpen={toggleDrawer(true)}
+            BackdropProps={{ invisible: true }}
+            open={isDrawerOpen}
+            onClose={() => setDrawerOpen(false)}
+            onOpen={() =>setDrawerOpen(true)}
           >
             <JobDetails />
           </SwipeableDrawer>
@@ -40,3 +34,5 @@ export default function JobDrawer() {
     </div>
   );
 }
+
+export default JobDrawer;

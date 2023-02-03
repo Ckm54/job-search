@@ -12,6 +12,7 @@ export const JobsContext = React.createContext<JobDataContext | null>(null);
 const JobsProvider = ({ children }: IProps) => {
   const [jobsData, setJobsData] = React.useState<JobData[]>([]);
   const [JobDetails, setJobDetails] = React.useState<JobData[]>([]);
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   const searchHandler = (query: string) => {
     if (query === "") {
@@ -28,6 +29,7 @@ const JobsProvider = ({ children }: IProps) => {
   const viewDetailsHandler = (jobId: number) => {
     const jobs = jobsData.filter((job: JobData) => job.id === jobId);
     setJobDetails(jobs);
+    setIsDrawerOpen(true);
   };
 
   const getJobsData = async () => {
@@ -45,6 +47,8 @@ const JobsProvider = ({ children }: IProps) => {
         searchHandler: searchHandler,
         viewDetailsHandler: viewDetailsHandler,
         jobData: JobDetails,
+        isDrawerOpen: isDrawerOpen,
+        setDrawerOpen: setIsDrawerOpen,
       }}
     >
       {children}
