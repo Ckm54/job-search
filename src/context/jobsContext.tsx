@@ -1,6 +1,7 @@
 import React from "react";
 import { getData } from "../api/getData";
 import { JobData, JobDataContext } from "../types";
+import toast from 'react-hot-toast';
 
 interface IProps {
   children: React.ReactNode;
@@ -26,6 +27,8 @@ const JobsProvider = ({ children }: IProps) => {
     setJobsData(data);
   };
 
+  const notify = () => toast.success('Application submitted.');
+
   const viewDetailsHandler = (jobId: number) => {
     const jobs = jobsData.filter((job: JobData) => job.id === jobId);
     setJobDetails(jobs);
@@ -49,6 +52,7 @@ const JobsProvider = ({ children }: IProps) => {
         jobData: JobDetails,
         isDrawerOpen: isDrawerOpen,
         setDrawerOpen: setIsDrawerOpen,
+        notify: notify
       }}
     >
       {children}

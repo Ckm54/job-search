@@ -13,6 +13,7 @@ export interface JobDataContext {
   jobData: JobData[];
   isDrawerOpen: boolean;
   setDrawerOpen: Dispatch<SetStateAction<boolean>>;
+  notify: () => {}
 }
 
 export interface ColorData {

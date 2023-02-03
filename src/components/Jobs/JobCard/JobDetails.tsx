@@ -9,7 +9,7 @@ import { LoadingButton } from "@mui/lab";
 import CloseIcon from "@mui/icons-material/Close";
 
 const JobDetails = () => {
-  const { jobData, isDrawerOpen, setDrawerOpen } = React.useContext(
+  const { jobData, isDrawerOpen, setDrawerOpen, notify } = React.useContext(
     JobsContext
   ) as JobDataContext;
   const [loading, setLoading] = React.useState(false);
@@ -31,6 +31,7 @@ const JobDetails = () => {
     setTimeout(() => {
       setDrawerOpen(false);
       setLoading(false);
+      notify();
     }, 2000);
   }
 

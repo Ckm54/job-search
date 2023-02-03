@@ -36,11 +36,12 @@ export default function DrawerAppBar(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const SearchBtn = styled(Button)({
-    backgroundColor: `${palleteColor.primary}`,
-    color: `${palleteColor.whiteLight}`,
+  const LoginBtn = styled(Button)({
+    backgroundColor: 'transparent',
+    border: `1px solid ${palleteColor.primary}`,
+    color: `${palleteColor.grayPallete}`,
     borderRadius: "5px",
-    padding: "12px 25px",
+    padding: "5px 25px",
     "&:hover": {
       backgroundColor: "#E64839",
     },
@@ -96,9 +97,9 @@ export default function DrawerAppBar(props: Props) {
             </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
-                <Button key={item}>{item}</Button>
+                <Button sx={{color: item === 'Home' ? palleteColor.primary : palleteColor.grayPallete}} key={item}>{item}</Button>
               ))}
-              <Button>Login</Button>
+              <LoginBtn>Login</LoginBtn>
             </Box>
           </Toolbar>
         </Container>

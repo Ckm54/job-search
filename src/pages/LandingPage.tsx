@@ -1,6 +1,6 @@
-import { Container } from '@mui/system';
 import React from 'react';
 import { Footer, Hero, JobsContainer, Navbar } from '../components';
+import { Toaster } from 'react-hot-toast';
 
 const LandingPage = () => {
   return (
@@ -8,6 +8,7 @@ const LandingPage = () => {
       <Navbar />
       <Hero />
       <JobsContainer />
+      <Toaster />
       <Footer />
     </>
   )
