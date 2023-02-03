@@ -31,3 +31,11 @@ Landing Page
 Job details drawer
 ![Job Details Page](/src/assets/screenshots/details.png "job details drawer")
 
+
+## References
+
+ - [React Documentation](https://reactjs.org/)
+ - [React MUI](https://mui.com/)
+ - [Netlify Docs](https://docs.netlify.com/?_ga=2.70482768.1119342628.1675415363-1884762838.1674339468)
+ - [Vite](https://vitejs.dev/)
+
