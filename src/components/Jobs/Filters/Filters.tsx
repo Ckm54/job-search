@@ -9,10 +9,10 @@ import CloseIcon from "@mui/icons-material/Close";
 type Props = {};
 
 const specialties: Specialty[] = [
-  { name: "Design", isActive: true },
+  { name: "All", isActive: true },
   { name: "Engineering", isActive: false },
   { name: "Web Dev", isActive: false },
-  { name: "Cloud Dev", isActive: false },
+  { name: "Design", isActive: false },
 ];
 
 const locations: Specialty[] = [

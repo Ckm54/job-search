@@ -23,6 +23,7 @@ export interface ColorData {
   darkBlack: string;
   whiteLight: string;
   mainBgColor: string;
+  borderJobCard: string;
 }
 
 export interface Specialty {

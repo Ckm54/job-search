@@ -6,5 +6,6 @@ export const palleteColor: ColorData = {
   grayPallete: "#636365",
   darkBlack: "#000000",
   whiteLight: "#FFFFFF",
-  mainBgColor: "#F6F6F6"
+  mainBgColor: "#F6F6F6",
+  borderJobCard: '#D0D0D0',
 }

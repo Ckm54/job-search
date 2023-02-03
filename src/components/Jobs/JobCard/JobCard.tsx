@@ -41,7 +41,7 @@ const JobCard = ({ job }: Props) => {
     <>
       <Container
         sx={{
-          border: `1px solid ${palleteColor.grayPallete}`,
+          border: `1px solid ${palleteColor.borderJobCard}`,
           marginBottom: "20px",
           borderRadius: "5px",
           padding: "20px",
